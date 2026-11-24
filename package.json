@@ -1,0 +1,48 @@
+{
+  "name": "fullstack-developer-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/generate-seo.mjs && node scripts/fetch-github-stats.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
+    "icons:brands": "node scripts/generate-brand-logos.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit",
+    "validate": "yarn format:check && yarn lint && yarn typecheck"
+  },
+  "dependencies": {
+    "@radix-ui/react-collapsible": "^1.2.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@react-pdf/renderer": "3.4.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "motion": "^14.14.0",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8",
+    "@typescript-eslint/parser": "^8",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.15",
+    "eslint-config-prettier": "9",
+    "postcss": "^8.5.33",
+    "prettier": "3",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "tech-stack-icons": "^3.7.4",
+    "typescript": "^5.6.3"
+  }
+}

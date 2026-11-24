@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { MotionConfig } from "motion/react";
 
-import { Analytics } from "@/components/shared/analytics";
+import { Analytics } from "@vercel/analytics/next";
 
 import "@/styles/globals.css";
 

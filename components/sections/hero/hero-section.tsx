@@ -26,7 +26,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
               {profile.location} · 7+ years of experience
             </p>
 
-            <h1 className="text-shimmer text-[clamp(40px,6vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em]">
+            <h1 className="text-shimmer text-[clamp(28px,9vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em] [overflow-wrap:anywhere]">
               {profile.name}
             </h1>
 

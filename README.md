@@ -30,7 +30,6 @@ Set these in `.env.local` for local builds, and in the Vercel project settings f
 | Variable               | Required            | Purpose                                                                                                                                                 |
 | ---------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL` | Yes, for production | Your public URL, e.g. `https://yourname.dev`. Used for canonical links, Open Graph tags and the sitemap.                                                |
-| `NEXT_PUBLIC_GA_ID`    | Optional            | Google Analytics 4 measurement ID (`G-XXXXXXXXXX`). Analytics is off when unset.                                                                        |
 | `GITHUB_TOKEN`         | Optional            | Read-only GitHub token. When set, the build refreshes the contribution numbers in `data/github-stats.json`. Without it, the committed snapshot is used. |
 | `GITHUB_LOGIN`         | Optional            | GitHub account to read contributions from (defaults to `venkatesh-sp`).                                                                                 |
 

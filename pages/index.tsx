@@ -7,12 +7,11 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteSidebar } from "@/components/layout/site-sidebar";
 import { Seo } from "@/components/shared/seo";
+import { AboutSection } from "@/components/sections/about/about-section";
 import { ContactSection } from "@/components/sections/contact/contact-section";
 import { EducationSection } from "@/components/sections/education/education-section";
-import { DeclarationSection } from "@/components/sections/declaration/declaration-section";
 import { ExperienceSection } from "@/components/sections/experience/experience-section";
 import { HeroSection } from "@/components/sections/hero/hero-section";
-import { ProfileSection } from "@/components/sections/profile/profile-section";
 import { ProjectsSection } from "@/components/sections/projects/projects-section";
 import { SkillsSection } from "@/components/sections/skills/skills-section";
 import { AmbientBackground } from "@/components/shared/motion/ambient-background";
@@ -42,7 +41,7 @@ export default function Home({ hasPhoto }: HomeProps) {
       <SiteHeader />
 
       {/* Desktop: the sidebar is a full-height column and only <main> scrolls. */}
-      <div className="page lg:grid lg:h-screen lg:grid-cols-[340px_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:overflow-hidden">
+      <div className="page lg:grid lg:h-screen lg:grid-cols-[333px_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:overflow-hidden">
         <SiteSidebar />
 
         <main
@@ -50,12 +49,11 @@ export default function Home({ hasPhoto }: HomeProps) {
           className="min-w-0 px-4 sm:px-6 lg:h-full lg:min-h-0 lg:overflow-y-auto lg:px-[clamp(40px,5vw,96px)]"
         >
           <HeroSection hasPhoto={hasPhoto} />
-          <ProfileSection />
+          <AboutSection />
           <SkillsSection />
           <ProjectsSection />
           <ExperienceSection />
           <EducationSection />
-          <DeclarationSection />
           <ContactSection />
           <SiteFooter />
         </main>

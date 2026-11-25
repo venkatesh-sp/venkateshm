@@ -6,7 +6,6 @@ import { ArrowUpRight, CalendarDays, FolderGit2, Layers } from "lucide-react";
 
 import { Disclosure } from "@/components/shared/disclosure";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { GithubActivity } from "@/components/sections/projects/github-activity";
 import { TechChip } from "@/components/shared/tech-chip";
 import { projects } from "@/data/portfolio";
 import type { Project, ProjectPoint } from "@/types/portfolio";
@@ -139,10 +138,12 @@ export function ProjectsSection() {
   const visible = active === ALL ? projects : projects.filter((p) => p.tags.includes(active));
 
   return (
-    <section id="projects" aria-labelledby="projects-title" className="scroll-mt-10 border-t border-border py-16">
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+      className="scroll-mt-10 border-t border-border py-10 sm:py-12"
+    >
       <SectionHeading id="projects-title" index="03" title="Projects" icon={FolderGit2} />
-
-      <GithubActivity />
 
       <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-2">

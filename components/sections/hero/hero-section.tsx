@@ -6,15 +6,15 @@ import { CountUp } from "@/components/shared/motion/count-up";
 import { Magnetic } from "@/components/shared/motion/magnetic";
 import { RippleButton } from "@/components/shared/motion/ripple-button";
 import { TypingText } from "@/components/shared/motion/typing-text";
-import { heroRoles, heroStats } from "@/data/portfolio";
+import { heroRoles, heroStats, heroIntro } from "@/data/portfolio";
 import { profile } from "@/data/site";
 
 export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
   return (
-    <div className="mt-8 border-b border-border pb-16 max-[1023px]:mt-4">
+    <div className="mt-6 border-b border-border pb-10 max-[1023px]:mt-4 lg:mt-0 lg:flex lg:min-h-full lg:flex-col lg:py-8">
       <section
         id="home"
-        className="animate-fade-up relative isolate overflow-hidden rounded-3xl border border-border bg-background/80 px-6 backdrop-blur-sm pb-16 pt-16 sm:px-10 lg:px-14 max-[1023px]:pt-12"
+        className="animate-fade-up relative isolate flex flex-col justify-center overflow-hidden rounded-3xl border border-border bg-background/80 px-6 pb-12 pt-12 backdrop-blur-sm sm:px-10 lg:flex-1 lg:px-14 lg:py-10 max-[1023px]:pt-10"
       >
         <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1fr)_340px]">
           <div className="min-w-0">
@@ -34,9 +34,8 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
               <TypingText phrases={heroRoles} />
             </p>
 
-            <p className="mt-5 max-w-[820px] text-[18px] leading-relaxed text-foreground/75">
-              I build reliable web applications, APIs and cloud deployments with Python, Django and Next.js, taking
-              systems from design to production.
+            <p className="mt-5 max-w-[820px] text-[15px] leading-[1.7] text-foreground/75 sm:text-[16px]">
+              {heroIntro}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -58,7 +57,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
           </div>
         </div>
 
-        <dl className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
+        <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
           {heroStats.map((stat) => (
             <div key={stat.label} className="bg-background/80 p-6 backdrop-blur transition-colors hover:bg-background">
               <dd className="m-0 text-[28px] font-semibold tracking-[-0.02em] text-brand">

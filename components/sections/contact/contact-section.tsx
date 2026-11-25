@@ -9,13 +9,13 @@ import { profile } from "@/data/site";
 
 export function ContactSection() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-10 py-16">
-      <SectionHeading id="contact-title" index="07" title="Contact" icon={Mail} />
+    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-10 py-10 sm:py-12">
+      <SectionHeading id="contact-title" index="06" title="Contact" icon={Mail} />
 
       <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div>
           <p className="mb-6 text-[clamp(26px,3.4vw,38px)] font-semibold leading-[1.2] tracking-[-0.02em]">
-            Have a system that needs to reach production? Let&apos;s talk.
+            Open to new opportunities and collaborations. Let&apos;s build something reliable together.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Magnetic>

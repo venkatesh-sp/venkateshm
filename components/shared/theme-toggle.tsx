@@ -42,11 +42,11 @@ export function ThemeToggle({ className }: { className?: string }) {
         aria-label={label}
         title={label}
         className={cn(
-          "relative z-10 grid h-8 w-8 place-items-center rounded-full transition-colors duration-300",
+          "relative z-10 grid h-6 w-6 place-items-center rounded-full transition-colors duration-300",
           active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
         )}
       >
-        <Icon size={15} aria-hidden />
+        <Icon size={12} aria-hidden />
       </button>
     );
   };
@@ -56,15 +56,15 @@ export function ThemeToggle({ className }: { className?: string }) {
       role="group"
       aria-label="Colour theme"
       className={cn(
-        "fixed right-5 top-5 z-50 grid grid-cols-2 items-center rounded-full border border-border bg-background/80 p-1 shadow-lg shadow-black/5 backdrop-blur-md",
+        "fixed right-3 top-3 z-50 grid grid-cols-2 items-center rounded-full border border-border bg-background/80 p-0.5 shadow-md shadow-black/5 backdrop-blur-md sm:right-5 sm:top-5",
         className,
       )}
     >
       <span
         aria-hidden
         className={cn(
-          "absolute bottom-1 left-1 top-1 w-8 rounded-full bg-primary shadow-md transition-transform duration-300 ease-out",
-          theme === "dark" && "translate-x-8",
+          "absolute bottom-0.5 left-0.5 top-0.5 w-6 rounded-full bg-primary shadow-sm transition-transform duration-300 ease-out",
+          theme === "dark" && "translate-x-6",
         )}
       />
       {option("light", "Light theme", Sun)}

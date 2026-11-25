@@ -29,6 +29,11 @@ export interface Project {
 }
 
 export interface ExperienceItem {
+  /** Logo in /public/logos, shown on a white tile. */
+  logo?: string;
+  website?: string;
+  /** Street address, opened as a map pin. */
+  address?: string;
   period: string;
   role: string;
   company: string;
@@ -37,6 +42,10 @@ export interface ExperienceItem {
 }
 
 export interface EducationItem {
+  /** Campus photo in /public/schools. A placeholder is shown when it is missing. */
+  photo?: string;
+  /** Street address, opened as a map pin. */
+  address?: string;
   period: string;
   degree: string;
   institution: string;

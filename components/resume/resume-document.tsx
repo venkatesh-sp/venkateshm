@@ -1,13 +1,12 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 
-import { education, experience, headlineSkills, profileSummary, projects, skillGroups } from "@/data/portfolio";
+import { coreStack, education, experience, profileSummary, projects } from "@/data/portfolio";
 import { profile } from "@/data/site";
 
 const ACCENT = "#0F766E";
 const INK = "#0F1F33";
 const MUTED = "#55606E";
 const RULE = "#D9DEE5";
-const CHIP_BG = "#E6F4F1";
 
 const styles = StyleSheet.create({
   page: {
@@ -41,17 +40,6 @@ const styles = StyleSheet.create({
     borderBottomColor: RULE,
   },
   summary: { color: INK, fontSize: 9.5 },
-  chipRow: { flexDirection: "row", flexWrap: "wrap", marginTop: 2 },
-  chip: {
-    fontSize: 8.5,
-    color: ACCENT,
-    backgroundColor: CHIP_BG,
-    paddingVertical: 2.5,
-    paddingHorizontal: 7,
-    borderRadius: 3,
-    marginRight: 5,
-    marginBottom: 5,
-  },
   skillRow: { flexDirection: "row", marginBottom: 4 },
   skillLabel: { width: 128, fontFamily: "Helvetica-Bold", fontSize: 9 },
   skillItems: { flex: 1, color: MUTED, fontSize: 9 },
@@ -64,6 +52,7 @@ const styles = StyleSheet.create({
   bulletRow: { flexDirection: "row", marginTop: 3 },
   bulletDot: { width: 10, color: ACCENT },
   bulletText: { flex: 1, color: INK },
+  pointLabel: { fontFamily: "Helvetica-Bold" },
   stackLine: { fontSize: 8.5, color: MUTED, marginTop: 4 },
   footer: {
     position: "absolute",
@@ -109,16 +98,7 @@ export function ResumeDocument() {
         <Text style={styles.summary}>{profileSummary}</Text>
 
         <SectionTitle>Core stack</SectionTitle>
-        <View style={styles.chipRow}>
-          {headlineSkills.map((skill) => (
-            <Text key={skill} style={styles.chip}>
-              {skill}
-            </Text>
-          ))}
-        </View>
-
-        <SectionTitle>Skills</SectionTitle>
-        {skillGroups.map((group) => (
+        {coreStack.map((group) => (
           <View key={group.title} style={styles.skillRow} wrap={false}>
             <Text style={styles.skillLabel}>{group.title}</Text>
             <Text style={styles.skillItems}>{group.items.join("  ·  ")}</Text>
@@ -149,6 +129,17 @@ export function ResumeDocument() {
             </View>
             <Text style={styles.company}>{project.subtitle}</Text>
             <Text style={[styles.summary, { marginTop: 3 }]}>{project.summary}</Text>
+            {project.points.map((point) =>
+              point.text ? (
+                <View key={point.label ?? point.text} style={styles.bulletRow}>
+                  <Text style={styles.bulletDot}>•</Text>
+                  <Text style={styles.bulletText}>
+                    {point.label && <Text style={styles.pointLabel}>{point.label}: </Text>}
+                    {point.text}
+                  </Text>
+                </View>
+              ) : null,
+            )}
             <Text style={styles.stackLine}>Stack: {project.stack.join(", ")}</Text>
           </View>
         ))}

@@ -1,33 +1,103 @@
-import { Cloud, Container, FileCode, MonitorSmartphone } from "lucide-react";
+import {
+  Cloud,
+  Database,
+  FileCode,
+  Layers,
+  Mail,
+  MonitorSmartphone,
+  Newspaper,
+  Radio,
+  Rocket,
+  Server,
+  Timer,
+  type LucideIcon,
+} from "lucide-react";
 
 import type { EducationItem, ExperienceItem, Project, SkillGroup } from "@/types/portfolio";
 
-export const profileSummary =
-  "A competent professional over 7 years of experience in web development using Python, Django, Django Rest Framework and Flask. Handling Telegram Chat updates using Flask. Deployment of web application in Heroku and AWS EC2 instance. Dump/load data from the cloud database to the local database using Django management commands. Worked on Django CRON jobs to send mails as notifications to users asynchronously. Worked on the configuration of Email SMTP with AWS SES to the web application. Developed a custom theme for Word Press to develop web-application.";
+/** Opening line of the hero, shown beneath the roles. */
+export const heroIntro =
+  "Results-driven Full Stack Developer with over 7 years of experience designing, developing, optimizing and deploying scalable, secure and high-performance web applications. Skilled in building robust backend architectures, RESTful APIs, dynamic front-end experiences and cloud-based application infrastructure.";
 
-/** The headline skills listed in the resume's Skills section. */
-export const headlineSkills: string[] = ["Python", "Django", "NodeJs", "NextJS", "Devops", "AWS Services"];
+/** The rest of the profile, shown in the About section. */
+export const aboutParagraphs: string[] = [
+  "I specialise in backend development using Python, Django, Django REST Framework and Flask, alongside modern front-end technologies such as Next.js and Node.js. My experience spans the complete software development lifecycle, from translating business requirements into technical solutions to implementation, integration, deployment and ongoing maintenance.",
+  "Throughout my career, I have developed and integrated RESTful APIs, implemented real-time Telegram messaging and chat update processing, and automated asynchronous email notifications using Django CRON jobs. I have also configured reliable transactional email services using Amazon SES and deployed production applications on AWS EC2 and Heroku.",
+  "Beyond conventional application development, I have built custom WordPress themes and extended platform functionality to deliver tailored web solutions. I focus on writing clean, maintainable and reusable code, and I prioritise application performance, scalability, security and seamless user experiences.",
+  "My approach combines strong backend engineering, modern front-end development, API integration, automation and cloud deployment to deliver reliable, production-ready software.",
+];
 
-export const skillGroups: SkillGroup[] = [
+/** Professional highlights shown as cards in the About section. */
+export const professionalHighlights: { title: string; description: string; icon: LucideIcon }[] = [
   {
-    title: "Python & Django",
-    items: ["Python", "Django", "Django Rest Framework", "Flask"],
-    icon: FileCode,
+    title: "Full Stack Engineering",
+    description: "End-to-end web application development using Python, Django, Flask, Next.js and Node.js.",
+    icon: Layers,
   },
   {
-    title: "JavaScript & UI",
-    items: ["NodeJs", "ExpressJS", "NextJS"],
-    icon: MonitorSmartphone,
+    title: "Backend & API Development",
+    description: "Designing scalable backend systems and secure RESTful APIs using Django REST Framework.",
+    icon: Server,
   },
   {
-    title: "Cloud & deployment",
-    items: ["Heroku", "AWS EC2", "AWS SES", "AWS S3"],
+    title: "Real-Time Integrations",
+    description: "Processing Telegram messages and real-time chat updates.",
+    icon: Radio,
+  },
+  {
+    title: "Task Automation",
+    description: "Implementing scheduled background tasks and automated email notifications using Django CRON.",
+    icon: Timer,
+  },
+  {
+    title: "Cloud & Infrastructure",
+    description: "Deploying and managing applications using AWS EC2, Amazon SES and Heroku.",
     icon: Cloud,
   },
   {
-    title: "DevOps & data",
-    items: ["Devops", "Docker", "MongoDB", "Swagger UI", "Django CRON jobs"],
-    icon: Container,
+    title: "Email Infrastructure",
+    description: "Configuring transactional email delivery and notification workflows.",
+    icon: Mail,
+  },
+  {
+    title: "CMS Development",
+    description: "Building custom WordPress themes and tailored web experiences.",
+    icon: Newspaper,
+  },
+];
+
+/** Full profile text, used by the resume and the README. */
+export const profileSummary = [heroIntro, ...aboutParagraphs].join(" ");
+
+/** Keywords for search-engine structured data (SEO `knowsAbout`). */
+export const headlineSkills: string[] = ["Python", "Django", "NodeJs", "NextJS", "Devops", "AWS Services"];
+
+/** Each core stack is one card; its items are the frameworks and services used with it. Every name appears once. */
+export const coreStack: SkillGroup[] = [
+  {
+    title: "Python",
+    items: ["Flask", "FastAPI", "Django", "Django Rest Framework", "Streamlit", "Django CRON jobs"],
+    icon: FileCode,
+  },
+  {
+    title: "Node.js",
+    items: ["ExpressJS", "React (Vite)", "NextJS", "UI Components (Shadcn)"],
+    icon: MonitorSmartphone,
+  },
+  {
+    title: "AWS",
+    items: ["EC2", "S3", "SES", "Lambda", "RDS"],
+    icon: Cloud,
+  },
+  {
+    title: "Deployment services",
+    items: ["Heroku", "Vercel", "Docker"],
+    icon: Rocket,
+  },
+  {
+    title: "Databases",
+    items: ["Postgres", "MongoDB"],
+    icon: Database,
   },
 ];
 
@@ -36,140 +106,144 @@ export const alsoComfortableWith: string[] = ["HL7 / FHIR", "Elixir / Phoenix", 
 export const projects: Project[] = [
   {
     title: "Vulcan",
-    subtitle: "Pipeline to convert raw HL7 messages into FHIR JSON",
+    subtitle: "Healthcare pipeline that converts HL7 messages into FHIR JSON",
     period: "Present",
     tags: ["Healthcare", "Cloud", "Full Stack"],
     summary:
-      "Vulcan is a medical-related application/pipeline with multiple services including Watcher, Consumer, Converter, Validator, and Finisher.",
+      "Vulcan is a healthcare data pipeline that ingests raw HL7 messages, converts them to FHIR JSON, validates the output and stores the results. It is built as a set of services with clearly separated responsibilities, so each stage can be maintained and reasoned about on its own.",
     points: [
       {
         label: "Watcher",
-        bullets: [
-          "Service that receives a notification from S3 when a new file is uploaded, checks the hash of the file and verifies its existence in the database.",
-          "If the file exists, saves it as a duplicate and stops execution, if the file does not exist, pushes it into a Simple Queue.",
-        ],
+        text: "Triggered by an S3 notification whenever a new file is uploaded. It computes the file's hash and checks the database for an existing copy: duplicates are recorded and processing stops, while new files are pushed onto a queue.",
       },
       {
         label: "Consumer",
-        bullets: [
-          "Actively consumes messages from the queue and validates the message type and If the message is HL7",
-          "Triggers the HL7 API of the Converter service and receives FHIR JSON",
-          "Posts the FHIR JSON payload to the Finisher API.",
-        ],
+        text: "Reads messages from the queue, validates their type and confirms that each one is HL7. It sends the message to the Converter's HL7 API and posts the resulting FHIR JSON to the Finisher.",
       },
-      { label: "Converter", text: "Converts HL7 messages to FHIR JSON." },
+      { label: "Converter", text: "Converts HL7 messages into FHIR JSON." },
       {
         label: "Validator",
-        text: "Validates FHIR JSON by ingesting the payload and providing a response.",
+        text: "Validates incoming FHIR JSON payloads and returns a response describing the result.",
       },
       {
         label: "Finisher",
-        text: "Saves the response to the database and pushes FHIR JSON to S3 and MongoDB.",
+        text: "Saves each response to the database and stores the FHIR JSON in S3 and MongoDB.",
       },
       {
         label: "FHIR API (ExpressJS)",
-        text: "Handles FHIR JSONs with Swagger UI.",
+        text: "A Node.js service for handling FHIR JSON, documented and explorable through Swagger UI.",
       },
       {
-        label: "Provider Portal (NextJS)",
-        text: "Provides an overview of multiple resources with tabular views.",
+        label: "Provider Portal (Next.js)",
+        text: "A front-end portal that gives users an overview of resources across tabular views.",
       },
     ],
     stack: ["S3", "Simple Queue", "ExpressJS", "NextJS", "MongoDB", "Swagger UI"],
   },
   {
     title: "Libero",
-    subtitle: "AI powered video conferencing product",
+    subtitle: "AI-powered video conferencing product",
     period: "2020 – 2021",
     tags: ["AI & Video", "Full Stack"],
     summary:
-      "Libero is one of the top five video conferencing products in an Innovation challenge conducted under the Digital India program - 2020, also recognized as a potential product to provide an intuitive video conferencing experience for its users.",
+      "Libero is a video conferencing product developed for an innovation challenge under the Digital India programme (2020). It was one of the top five entries, recognised for its potential to deliver an intuitive video conferencing experience.",
     points: [
       {
-        text: "Client App built up on NextJS integrating with openvidu Media server for transforming packets for live video streaming and joined users information.",
+        text: "Built the client application in Next.js, integrated with the OpenVidu media server to handle live video streams and track the users who join each session.",
       },
       {
-        text: "Server App built up on Phoenix (Elixir framework) for saving information like rooms, chats, boards and users.",
+        text: "Developed the server application in Phoenix (Elixir) to store rooms, chats, boards and user information.",
       },
-      { text: "Media Server deployed using Dockerized image." },
+      { text: "Packaged the media server as a Docker image and deployed it from that image." },
     ],
     stack: ["NextJS", "OpenVidu", "Phoenix / Elixir", "Docker"],
   },
   {
     title: "JVB Health and Wellness",
-    subtitle: "Health Care app to monitor and analyse the health data",
+    subtitle: "Health and wellness platform that analyses data from wearable devices",
     period: "2018 – 2019",
     tags: ["Healthcare", "Full Stack"],
     summary:
-      "Helping people improve their health and quality of life through a targeted approach to personal transformation. Integrated data from health devices into web and mobile applications.",
+      "A health and wellness platform that helps people improve their fitness and quality of life through a targeted, data-driven approach to personal transformation. It brings together data from wearable devices and presents it on both the web and mobile.",
     points: [
       {
-        text: "Data reviews and analysis of your workouts, nutrition, sleep, movement and race results. We will get the data from the Health watches like Fit bit, Garmin, Apple etc.",
+        text: "Integrated data from fitness devices such as Fitbit, Garmin and Apple Health into both the web and mobile applications.",
       },
       {
-        text: "We integrated all those watches on the web and as well in mobile applications.",
+        text: "Provides reviews and analysis of workouts, nutrition, sleep, movement and race results, so users can follow their progress over time.",
       },
     ],
     stack: ["Fitbit", "Garmin", "Apple Health", "Web", "Mobile"],
   },
   {
     title: "PayTrack",
-    subtitle: "Track EMIs, loans, credit card bills and recurring payments",
+    subtitle: "Personal finance tracker for EMIs, loans, credit card bills and recurring payments",
     period: "2026",
     tags: ["Full Stack", "Personal Finance"],
     summary:
-      "Keeps EMIs, loans, credit card bills and recurring payments organised, with reminders, analytics and a full payment history.",
+      "A personal finance application that keeps EMIs, loans, credit card bills and recurring payments organised in one place. It provides reminders and analytics and maintains a complete payment history.",
     points: [],
     stack: ["Next.js", "TypeScript"],
-    links: [
-      { label: "Live site", url: "https://paytrack-woad.vercel.app" },
-      { label: "Source code", url: "https://github.com/venkatesh-sp/paytrack" },
-    ],
+    links: [{ label: "Live site", url: "https://paytrack.venkateshm.me" }],
   },
 ];
 
 export const experience: ExperienceItem[] = [
   {
+    logo: "/logos/soulpage.svg",
+    website: "https://soulpageit.com",
+    address: "AC 02, Indu Fortune Fields Annexe, KPHB 13th Phase Road, Hyderabad 500072",
     period: "12/2019 – Present",
     role: "Full Stack Developer",
     company: "Soulpage IT Solutions Private Limited",
     location: "Hyderabad, India",
     highlights: [
-      "Integrated third-party APIs to enhance overall application functionality and improve user experience.",
-      "Continuously updated skillset through professional development courses, staying current with industry trends and emerging technologies.",
-      "Demonstrated strong problem-solving abilities by quickly identifying and resolving defects, leading to increased application stability and user satisfaction.",
-      "Conducted thorough code reviews to maintain high standards of quality and consistency throughout the project lifecycle.",
+      "Design and build full-stack web applications with Python, Django, Django REST Framework, Next.js and Node.js, from requirements through to production.",
+      "Deploy and operate applications on AWS (EC2, S3 and SES) and Heroku, including configuring transactional email through AWS SES SMTP.",
+      "Integrate third-party APIs to extend application functionality and improve the user experience.",
+      "Resolve defects quickly by identifying root causes, improving application stability and user satisfaction.",
+      "Conduct code reviews to maintain quality and consistency across the project lifecycle.",
+      "Keep my skills current through continuous professional development in emerging frameworks and tools.",
     ],
   },
   {
+    logo: "/logos/normsoftware.jpg",
+    website: "https://normsoftware.com",
+    address: "1-2-68 to 70, 2nd Floor, Siddhamsetty Complex, Parklane, Secunderabad, Hyderabad 500003",
     period: "08/2018 – 11/2019",
     role: "Python Developer",
     company: "Norm Software Solutions",
     location: "Hyderabad, India",
     highlights: [
-      "Created RESTful APIs using the Django REST framework, enabling seamless communication between front-end and back-end components.",
-      "Generated workflow reports to test proposed change executions.",
-      "Identified possible system enhancements to improving functionality and streamline administration.",
-      "Refactored legacy codebase to modernize application architecture and improve maintainability.",
-      "Integrated third-party APIs to expand functionality and automate data retrieval processes.",
+      "Built RESTful APIs with the Django REST Framework, enabling clean communication between front-end and back-end components.",
+      "Produced workflow reports to validate proposed changes before they were executed.",
+      "Identified system enhancements that improved functionality and streamlined administration.",
+      "Refactored legacy code to modernise the application architecture and improve maintainability.",
+      "Integrated third-party APIs to expand functionality and automate data retrieval.",
     ],
   },
 ];
 
 export const education: EducationItem[] = [
   {
+    photo: "/schools/qis-college.jpg",
+    address: "Vengamukkapalem, Ongole, Prakasam District, Andhra Pradesh 523272",
     period: "2012 – 2016",
-    degree: "Bachelor of Technology (CSE)",
-    institution: "Qis College of Engineering and Technology",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    institution: "QIS College of Engineering and Technology",
     location: "Ongole, India",
   },
   {
+    photo: "/schools/sri-chaitanya-junior-kalasala.jpg",
+    address: "Sri Chaitanya Junior Kalasala, Bhavanipuram, near Swathi Theatre, Vijayawada, Andhra Pradesh",
     period: "2010 – 2012",
-    degree: "Board of Intermediate (MPC)",
-    institution: "Sri Chaitanya Jr. Kalasala",
+    degree: "Intermediate (MPC)",
+    institution: "Sri Chaitanya Junior Kalasala",
     location: "Vijayawada, India",
   },
   {
+    photo: "/schools/st-arnolds-high-school.jpg",
+    address: "Medarametla, Andhra Pradesh",
     period: "2009 – 2010",
     degree: "Secondary School Certificate (SSC)",
     institution: "St. Arnold's High School",
@@ -177,20 +251,17 @@ export const education: EducationItem[] = [
   },
 ];
 
-export const declaration =
-  "I set high standards for myself and have my dreams and ambitions. I have a flair for learning new things and persistence in problem-solving. I strongly believe that with my skills, analytical and logical ability, determination, dedication, commitment, and diligent efforts, I can prove to be an asset to any organization.";
-
-/** Headline figures for the hero, all taken from the resume. */
 /** Roles typed out in the hero. */
 export const heroRoles: string[] = [
   "Full Stack Developer",
-  "Python & Django engineer",
-  "Next.js front-end builder",
-  "AWS deployment specialist",
+  "Python & Django Engineer",
+  "Next.js Front-End Developer",
+  "AWS Deployment Specialist",
 ];
 
+/** Headline figures for the hero, all taken from the resume. */
 export const heroStats: { value: string; label: string }[] = [
   { value: "7+", label: "Years building web applications" },
-  { value: "3", label: "Projects across healthcare, AI and health tech" },
-  { value: "AWS", label: "EC2, S3 and SES deployments, plus Heroku" },
+  { value: "4", label: "Projects across healthcare, AI and personal finance" },
+  { value: "AWS", label: "EC2, S3, SES, Lambda and RDS, plus Heroku and Vercel" },
 ];

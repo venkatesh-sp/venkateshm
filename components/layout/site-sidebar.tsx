@@ -8,7 +8,7 @@ import { navLinks, profile } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const navIcons: Record<string, LucideIcon> = {
-  Profile: IdCard,
+  About: IdCard,
   Skills: Code2,
   Projects: FolderGit2,
   Experience: Briefcase,
@@ -40,7 +40,7 @@ export function SiteSidebar() {
   }, []);
 
   return (
-    <aside className="hidden lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:overflow-hidden lg:py-20 lg:pl-[clamp(24px,3vw,48px)] lg:pr-6">
+    <aside className="hidden lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:overflow-hidden lg:py-12 lg:pl-[clamp(24px,3vw,48px)] lg:pr-6">
       <div>
         <a href="#home" className="block text-[26px] font-semibold leading-[1.15] tracking-[-0.02em]">
           {profile.name}

@@ -16,7 +16,7 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.venkate
 export const siteMeta = {
   title: "Venkatesh Marreboyina | Full Stack Developer",
   description:
-    "Full Stack Developer with 7+ years of experience in web development using Python, Django, Django REST Framework, Flask, NodeJs and NextJS, deployed on Heroku and AWS.",
+    "Full Stack Developer with over 7 years of experience building web applications with Python, Django, Django REST Framework, Flask, Node.js and Next.js, deployed on AWS, Heroku and Vercel.",
   keywords: [
     "Full Stack Developer",
     "Python",
@@ -38,7 +38,7 @@ export const siteMeta = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Profile", href: "#profile" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },

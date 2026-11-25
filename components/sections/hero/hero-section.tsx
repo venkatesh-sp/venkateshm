@@ -17,7 +17,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
         className="animate-fade-up relative isolate flex flex-col justify-center overflow-hidden rounded-3xl border border-border bg-background/80 px-6 pb-12 pt-12 backdrop-blur-sm sm:px-10 lg:flex-1 lg:px-14 lg:py-10 max-[1023px]:pt-10"
       >
         <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1fr)_340px]">
-          <div className="min-w-0">
+          <div className="min-w-0 [container-type:inline-size]">
             <p className="mb-6 flex items-center gap-3 text-[13px] font-medium text-muted-foreground">
               <span aria-hidden className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
@@ -26,7 +26,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
               {profile.location} · 7+ years of experience
             </p>
 
-            <h1 className="text-shimmer text-[clamp(28px,9vw,64px)] font-semibold leading-[1.05] tracking-[-0.03em] [overflow-wrap:anywhere]">
+            <h1 className="text-shimmer text-[clamp(26px,15cqi,64px)] font-semibold leading-[1.05] tracking-[-0.03em]">
               {profile.name}
             </h1>
 

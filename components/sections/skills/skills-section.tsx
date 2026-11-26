@@ -116,7 +116,7 @@ export function SkillsSection() {
               <span
                 aria-hidden
                 className={cn(
-                  "pointer-events-none absolute -bottom-16 -left-10 -z-10 h-40 w-40 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125",
+                  "pointer-events-none absolute -bottom-16 -left-10 -z-10 h-40 w-40 rounded-full [mask-image:radial-gradient(closest-side,black_35%,transparent)] transition-transform duration-500 group-hover:scale-125",
                   accent.glow,
                 )}
               />

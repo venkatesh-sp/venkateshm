@@ -101,7 +101,7 @@ export function ExperienceSection() {
           >
             <span
               aria-hidden
-              className="pointer-events-none absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-brand/10 blur-3xl"
+              className="pointer-events-none absolute -right-20 -top-20 -z-10 h-64 w-64 rounded-full bg-brand/10 [mask-image:radial-gradient(closest-side,black_35%,transparent)]"
             />
 
             <header className="flex flex-col gap-5 border-b border-border pb-6">

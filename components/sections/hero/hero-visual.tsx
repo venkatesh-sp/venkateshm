@@ -40,7 +40,7 @@ function AnimatedDeveloper() {
     >
       <div
         aria-hidden
-        className="absolute inset-[8%] rounded-full bg-gradient-to-br from-brand/20 via-brand/5 to-transparent blur-2xl"
+        className="absolute inset-[8%] rounded-full bg-gradient-to-br from-brand/20 via-brand/5 to-transparent [mask-image:radial-gradient(closest-side,black_35%,transparent)]"
       />
       <DeveloperArt idPrefix="hero" />
     </div>

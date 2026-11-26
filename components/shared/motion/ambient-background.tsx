@@ -28,7 +28,10 @@ export function AmbientBackground() {
       {blobs.map((blob) => (
         <div
           key={blob.animation}
-          className={cn("absolute rounded-full blur-3xl will-change-transform", blob.className)}
+          className={cn(
+            "absolute rounded-full [mask-image:radial-gradient(closest-side,black_35%,transparent)] will-change-transform",
+            blob.className,
+          )}
           style={{ animation: blob.animation }}
         />
       ))}

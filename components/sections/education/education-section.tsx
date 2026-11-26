@@ -34,7 +34,7 @@ function CampusPhoto({ src, institution }: { src?: string; institution: string }
       fill
       unoptimized
       sizes="(min-width: 1024px) 60vw, 100vw"
-      className="object-cover"
+      className="object-contain p-3 sm:p-4"
       onError={() => setFailed(true)}
     />
   );
@@ -91,7 +91,7 @@ export function EducationSection() {
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="mt-6 overflow-hidden rounded-3xl border border-border bg-card/85 shadow-sm"
         >
-          <div className="relative aspect-[16/7] w-full overflow-hidden bg-secondary">
+          <div className="relative h-72 w-full overflow-hidden bg-secondary sm:h-80">
             <CampusPhoto src={item.photo} institution={item.institution} />
             {activeIndex === 0 && (
               <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-[12px] font-semibold text-brand shadow-sm">

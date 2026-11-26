@@ -226,7 +226,7 @@ export const experience: ExperienceItem[] = [
 
 export const education: EducationItem[] = [
   {
-    photo: "/schools/qis-college.jpg",
+    photo: "/schools/qis-college.png",
     address: "Vengamukkapalem, Ongole, Prakasam District, Andhra Pradesh 523272",
     period: "2012 – 2016",
     degree: "Bachelor of Technology in Computer Science and Engineering",
@@ -234,7 +234,7 @@ export const education: EducationItem[] = [
     location: "Ongole, India",
   },
   {
-    photo: "/schools/sri-chaitanya-junior-kalasala.jpg",
+    photo: "/schools/sri-chaitanya-college.png",
     address: "Sri Chaitanya Junior Kalasala, Bhavanipuram, near Swathi Theatre, Vijayawada, Andhra Pradesh",
     period: "2010 – 2012",
     degree: "Intermediate (MPC)",
@@ -242,7 +242,7 @@ export const education: EducationItem[] = [
     location: "Vijayawada, India",
   },
   {
-    photo: "/schools/st-arnolds-high-school.jpg",
+    photo: "/schools/st-arnolds-school.png",
     address: "Medarametla, Andhra Pradesh",
     period: "2009 – 2010",
     degree: "Secondary School Certificate (SSC)",

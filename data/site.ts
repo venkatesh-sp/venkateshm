@@ -13,6 +13,9 @@ export const profile = {
 /** Public URL of the site, used for canonical links, Open Graph and the sitemap. Set NEXT_PUBLIC_SITE_URL in production. */
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.venkateshm.me").replace(/\/$/, "");
 
+/** Public profiles linked from the structured data, so search engines can connect them to this site. */
+export const socialProfiles: string[] = ["https://github.com/venkatesh-sp"];
+
 export const siteMeta = {
   title: "Venkatesh Marreboyina | Full Stack Developer",
   description:

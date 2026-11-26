@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { education, experience, headlineSkills } from "@/data/portfolio";
-import { profile, siteMeta, siteUrl } from "@/data/site";
+import { profile, siteMeta, siteUrl, socialProfiles } from "@/data/site";
 
 /** Page metadata: search snippets, Open Graph and Twitter cards, plus Person/WebSite structured data. */
 export function Seo() {
@@ -19,6 +19,7 @@ export function Seo() {
         description: siteMeta.description,
         url: siteUrl,
         image: pageImage,
+        sameAs: socialProfiles,
         email: `mailto:${profile.email}`,
         telephone: `+91${profile.phone}`,
         address: { "@type": "PostalAddress", addressLocality: "Hyderabad", addressCountry: "IN" },
@@ -47,6 +48,9 @@ export function Seo() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content={siteMeta.themeColor} />
       <link rel="canonical" href={siteUrl} />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={profile.name} />

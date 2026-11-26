@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Briefcase, Circle, Code2, FolderGit2, GraduationCap, IdCard, Mail, type LucideIcon } from "lucide-react";
 import { motion } from "motion/react";
 
+import { DeveloperArt } from "@/components/shared/developer-art";
 import { navLinks, profile } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -42,8 +43,11 @@ export function SiteSidebar() {
   return (
     <aside className="hidden lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:overflow-hidden lg:py-12 lg:pl-[clamp(24px,3vw,48px)] lg:pr-6">
       <div>
-        <a href="#home" className="block text-[26px] font-semibold leading-[1.15] tracking-[-0.02em]">
-          {profile.name}
+        <a href="#home" className="flex items-start gap-3 text-[26px] font-semibold leading-[1.15] tracking-[-0.02em]">
+          <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-2xl bg-secondary/70 ring-1 ring-border">
+            <DeveloperArt idPrefix="sidebar" viewBox="30 50 260 260" className="h-full w-full scale-110" />
+          </span>
+          <span>{profile.name}</span>
         </a>
         <p className="mb-0 mt-2 text-[14px] font-medium text-brand">{profile.title}</p>
 

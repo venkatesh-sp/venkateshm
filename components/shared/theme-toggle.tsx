@@ -56,7 +56,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       role="group"
       aria-label="Colour theme"
       className={cn(
-        "fixed right-3 top-3 z-50 grid grid-cols-2 items-center rounded-full border border-border bg-background/80 p-0.5 shadow-md shadow-black/5 backdrop-blur-md sm:right-5 sm:top-5",
+        "relative grid grid-cols-2 items-center rounded-full border border-border bg-background/80 p-0.5 shadow-md shadow-black/5",
         className,
       )}
     >

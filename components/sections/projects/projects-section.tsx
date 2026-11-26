@@ -39,7 +39,7 @@ function ProjectCard({ project, index, featured }: { project: Project; index: nu
   return (
     <article
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card/85 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-xl hover:shadow-black/5 sm:p-7",
+        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card/85 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-xl hover:shadow-black/5 sm:p-7",
         featured ? "border-brand/35 md:col-span-2" : "border-foreground/15",
       )}
     >

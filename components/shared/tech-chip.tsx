@@ -9,6 +9,11 @@ interface TechChipProps extends Omit<BadgeProps, "children"> {
   iconSize?: number;
 }
 
+/** Logos are passed as data URIs, not injected as markup, so no HTML is parsed at runtime. */
+function svgSource(svg: string) {
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 /** Badge pairing a technology with its brand logo (or a concept icon when no logo exists). */
 export function TechChip({ name, iconSize = 14, className, variant, ...props }: TechChipProps) {
   const brand = brandIcons[name] ? brandLogos[brandIcons[name]] : undefined;
@@ -18,17 +23,23 @@ export function TechChip({ name, iconSize = 14, className, variant, ...props }: 
     <Badge variant={variant} className={cn("gap-1.5", className)} {...props}>
       {brand ? (
         <>
-          <span
+          {/* eslint-disable-next-line @next/next/no-img-element -- data URI logos, not optimisable */}
+          <img
+            src={svgSource(brand.light)}
+            alt=""
             aria-hidden
-            className="inline-flex shrink-0 items-center justify-center dark:hidden [&>svg]:h-full [&>svg]:w-full"
-            style={{ width: iconSize, height: iconSize }}
-            dangerouslySetInnerHTML={{ __html: brand.light }}
+            width={iconSize}
+            height={iconSize}
+            className="shrink-0 dark:hidden"
           />
-          <span
+          {/* eslint-disable-next-line @next/next/no-img-element -- data URI logos, not optimisable */}
+          <img
+            src={svgSource(brand.dark)}
+            alt=""
             aria-hidden
-            className="hidden shrink-0 items-center justify-center dark:inline-flex [&>svg]:h-full [&>svg]:w-full"
-            style={{ width: iconSize, height: iconSize }}
-            dangerouslySetInnerHTML={{ __html: brand.dark }}
+            width={iconSize}
+            height={iconSize}
+            className="hidden shrink-0 dark:inline-block"
           />
         </>
       ) : (

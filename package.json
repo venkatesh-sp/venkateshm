@@ -45,5 +45,12 @@
     "tailwindcss-animate": "^1.0.7",
     "tech-stack-icons": "^3.7.4",
     "typescript": "^5.6.3"
-  }
+  },
+  "browserslist": [
+    "chrome >= 90",
+    "edge >= 90",
+    "firefox >= 90",
+    "safari >= 15",
+    "not dead"
+  ]
 }

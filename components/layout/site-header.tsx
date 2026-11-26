@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { Brand } from "@/components/shared/brand";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { navLinks, profile } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,12 @@ export function SiteHeader() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur lg:hidden">
+    <header className="sticky top-0 z-20 border-b border-border bg-background/90 lg:hidden">
       <nav className="shell flex h-16 items-center justify-between" aria-label="Main navigation">
         <Brand />
 
         <div className="flex items-center gap-2">
+          <ThemeToggle className="lg:hidden" />
           <Button
             variant="ghost"
             size="icon"

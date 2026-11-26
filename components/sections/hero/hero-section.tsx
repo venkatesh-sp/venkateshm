@@ -14,7 +14,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
     <div className="mt-6 border-b border-border pb-10 max-[1023px]:mt-4 lg:mt-0 lg:flex lg:min-h-full lg:flex-col lg:py-8">
       <section
         id="home"
-        className="animate-fade-up relative isolate flex flex-col justify-center overflow-hidden rounded-3xl border border-border bg-background/80 px-6 pb-12 pt-12 backdrop-blur-sm sm:px-10 lg:flex-1 lg:px-14 lg:py-10 max-[1023px]:pt-10"
+        className="relative isolate flex flex-col justify-center overflow-hidden rounded-3xl border border-border bg-background/80 px-6 pb-12 pt-12 sm:px-10 lg:flex-1 lg:px-14 lg:py-10 max-[1023px]:pt-10"
       >
         <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1fr)_340px]">
           <div className="min-w-0 [container-type:inline-size]">
@@ -45,11 +45,11 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
                   Get in touch
                 </RippleButton>
               </Magnetic>
-              <RippleButton href="#projects" variant="outline" className="bg-background/70 backdrop-blur">
+              <RippleButton href="#projects" variant="outline" className="bg-background/70">
                 View projects
                 <ArrowRight size={16} aria-hidden />
               </RippleButton>
-              <DownloadResumeButton variant="outline" className="bg-background/70 backdrop-blur" />
+              <DownloadResumeButton variant="outline" className="bg-background/70" />
             </div>
           </div>
           <div>
@@ -59,7 +59,7 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
 
         <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
           {heroStats.map((stat) => (
-            <div key={stat.label} className="bg-background/80 p-6 backdrop-blur transition-colors hover:bg-background">
+            <div key={stat.label} className="bg-background/80 p-6 transition-colors hover:bg-background">
               <dd className="m-0 text-[28px] font-semibold tracking-[-0.02em] text-brand">
                 <CountUp value={stat.value} />
               </dd>

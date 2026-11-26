@@ -29,7 +29,7 @@ export function ContactSection() {
         </div>
 
         <TiltCard className="rounded-xl" tilt={5}>
-          <ul className="divide-y divide-border rounded-xl border border-border bg-card/85 backdrop-blur-sm">
+          <ul className="divide-y divide-border rounded-xl border border-border bg-card/85">
             <li>
               <a
                 href={`mailto:${profile.email}`}

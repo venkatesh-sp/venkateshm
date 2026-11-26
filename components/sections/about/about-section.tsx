@@ -25,7 +25,7 @@ export function AboutSection() {
         {professionalHighlights.map((item) => (
           <li
             key={item.title}
-            className="rounded-2xl border border-border bg-card/85 p-5 backdrop-blur-sm last:sm:col-span-2 last:xl:col-span-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-black/5"
+            className="rounded-2xl border border-border bg-card/85 p-5 last:sm:col-span-2 last:xl:col-span-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-black/5"
           >
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-soft text-brand ring-1 ring-brand/15">
               <item.icon size={17} aria-hidden />

@@ -51,7 +51,7 @@ export function ExperienceSection() {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:gap-8">
         {/* Company switcher: a row of tabs on phones, a stacked list on desktop */}
         <div
-          role="tablist"
+          role="group"
           aria-label="Companies"
           className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0"
         >
@@ -61,8 +61,7 @@ export function ExperienceSection() {
               <button
                 key={item.company}
                 type="button"
-                role="tab"
-                aria-selected={selected}
+                aria-pressed={selected}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
                   "group relative min-w-[250px] shrink-0 rounded-2xl border p-4 text-left transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-ring lg:min-w-0",
@@ -94,12 +93,11 @@ export function ExperienceSection() {
         <AnimatePresence mode="wait">
           <motion.article
             key={activeIndex}
-            role="tabpanel"
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative isolate overflow-hidden rounded-3xl border border-border bg-card/85 p-6 shadow-sm backdrop-blur-sm sm:p-8"
+            className="relative isolate overflow-hidden rounded-3xl border border-border bg-card/85 p-6 shadow-sm sm:p-8"
           >
             <span
               aria-hidden

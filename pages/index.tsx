@@ -37,7 +37,7 @@ export default function Home({ hasPhoto }: HomeProps) {
 
       <AmbientBackground />
       <ScrollProgress />
-      <ThemeToggle />
+      <ThemeToggle className="fixed right-5 top-5 z-50 hidden lg:grid" />
       <SiteHeader />
 
       {/* Desktop: the sidebar is a full-height column and only <main> scrolls. */}

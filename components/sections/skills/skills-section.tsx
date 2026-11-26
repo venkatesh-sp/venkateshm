@@ -109,7 +109,7 @@ export function SkillsSection() {
               key={group.title}
               variants={item}
               className={cn(
-                "group relative isolate overflow-hidden rounded-3xl border border-border bg-card/85 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 sm:p-7",
+                "group relative isolate overflow-hidden rounded-3xl border border-border bg-card/85 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 sm:p-7",
                 accent.span,
               )}
             >

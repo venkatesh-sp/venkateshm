@@ -52,15 +52,14 @@ export function EducationSection() {
     >
       <SectionHeading id="education-title" index="05" title="Education" icon={GraduationCap} />
 
-      <div role="tablist" aria-label="Institutions" className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2">
+      <div role="group" aria-label="Institutions" className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2">
         {education.map((entry, index) => {
           const selected = index === activeIndex;
           return (
             <button
               key={entry.degree}
               type="button"
-              role="tab"
-              aria-selected={selected}
+              aria-pressed={selected}
               onClick={() => setActiveIndex(index)}
               className={cn(
                 "relative shrink-0 rounded-full border px-5 py-2.5 text-left text-[14px] font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-ring",
@@ -86,17 +85,16 @@ export function EducationSection() {
       <AnimatePresence mode="wait">
         <motion.article
           key={activeIndex}
-          role="tabpanel"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="mt-6 overflow-hidden rounded-3xl border border-border bg-card/85 shadow-sm backdrop-blur-sm"
+          className="mt-6 overflow-hidden rounded-3xl border border-border bg-card/85 shadow-sm"
         >
           <div className="relative aspect-[16/7] w-full overflow-hidden bg-secondary">
             <CampusPhoto src={item.photo} institution={item.institution} />
             {activeIndex === 0 && (
-              <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-[12px] font-semibold text-brand shadow-sm backdrop-blur">
+              <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-[12px] font-semibold text-brand shadow-sm">
                 Highest qualification
               </span>
             )}

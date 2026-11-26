@@ -67,7 +67,8 @@ export const professionalHighlights: { title: string; description: string; icon:
 ];
 
 /** Full profile text, used by the resume and the README. */
-export const profileSummary = [heroIntro, ...aboutParagraphs].join(" ");
+/** Full profile as separate paragraphs, used by the resume page, the PDF and the README. */
+export const profileParagraphs: string[] = [heroIntro, ...aboutParagraphs];
 
 /** Keywords for search-engine structured data (SEO `knowsAbout`). */
 export const headlineSkills: string[] = ["Python", "Django", "NodeJs", "NextJS", "Devops", "AWS Services"];

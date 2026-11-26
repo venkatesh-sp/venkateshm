@@ -6,7 +6,15 @@ venkatesh.marreboyina@gmail.com · 8977780323 · Hyderabad, India
 
 ## Profile
 
-Results-driven Full Stack Developer with over 7 years of experience designing, developing, optimizing and deploying scalable, secure and high-performance web applications. Skilled in building robust backend architectures, RESTful APIs, dynamic front-end experiences and cloud-based application infrastructure. I specialise in backend development using Python, Django, Django REST Framework and Flask, alongside modern front-end technologies such as Next.js and Node.js. My experience spans the complete software development lifecycle, from translating business requirements into technical solutions to implementation, integration, deployment and ongoing maintenance. Throughout my career, I have developed and integrated RESTful APIs, implemented real-time Telegram messaging and chat update processing, and automated asynchronous email notifications using Django CRON jobs. I have also configured reliable transactional email services using Amazon SES and deployed production applications on AWS EC2 and Heroku. Beyond conventional application development, I have built custom WordPress themes and extended platform functionality to deliver tailored web solutions. I focus on writing clean, maintainable and reusable code, and I prioritise application performance, scalability, security and seamless user experiences. My approach combines strong backend engineering, modern front-end development, API integration, automation and cloud deployment to deliver reliable, production-ready software.
+Results-driven Full Stack Developer with over 7 years of experience designing, developing, optimizing and deploying scalable, secure and high-performance web applications. Skilled in building robust backend architectures, RESTful APIs, dynamic front-end experiences and cloud-based application infrastructure.
+
+I specialise in backend development using Python, Django, Django REST Framework and Flask, alongside modern front-end technologies such as Next.js and Node.js. My experience spans the complete software development lifecycle, from translating business requirements into technical solutions to implementation, integration, deployment and ongoing maintenance.
+
+Throughout my career, I have developed and integrated RESTful APIs, implemented real-time Telegram messaging and chat update processing, and automated asynchronous email notifications using Django CRON jobs. I have also configured reliable transactional email services using Amazon SES and deployed production applications on AWS EC2 and Heroku.
+
+Beyond conventional application development, I have built custom WordPress themes and extended platform functionality to deliver tailored web solutions. I focus on writing clean, maintainable and reusable code, and I prioritise application performance, scalability, security and seamless user experiences.
+
+My approach combines strong backend engineering, modern front-end development, API integration, automation and cloud deployment to deliver reliable, production-ready software.
 
 ## Core stack
 

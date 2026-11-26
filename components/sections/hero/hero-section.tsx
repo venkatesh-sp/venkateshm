@@ -1,7 +1,6 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, FileText, Mail } from "lucide-react";
 
 import { HeroVisual } from "@/components/sections/hero/hero-visual";
-import { DownloadResumeButton } from "@/components/resume/download-resume-button";
 import { CountUp } from "@/components/shared/motion/count-up";
 import { Magnetic } from "@/components/shared/motion/magnetic";
 import { RippleButton } from "@/components/shared/motion/ripple-button";
@@ -49,7 +48,10 @@ export function HeroSection({ hasPhoto = false }: { hasPhoto?: boolean }) {
                 View projects
                 <ArrowRight size={16} aria-hidden />
               </RippleButton>
-              <DownloadResumeButton variant="outline" className="bg-background/70" />
+              <RippleButton href="/resume" variant="outline" className="bg-background/70">
+                <FileText size={16} aria-hidden />
+                View resume
+              </RippleButton>
             </div>
           </div>
           <div>
